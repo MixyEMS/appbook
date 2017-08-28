@@ -4,13 +4,23 @@
 <head>
     <title>book app</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,urser-scalable=no,minimal-ui">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/reset.css">
     <style>
+    html{
+    	width:100%;
+    	height: 100%;
+    	overflow-x: hidden;
+    }
+    body{
+    	width:100%;
+    	height: 100%;
+    	overflow-x:hidden;
+    }
     .mywrap {
         width: 100%;
-        height: 100%;
+        height:100%;
         overflow-x: hidden;
         position: relative;
     }
@@ -19,8 +29,8 @@
         width: 100%;
         height: auto;
         position: relative;
-        background-color: #333;
-        color: #ccc;
+        background-color: #948f54;
+        color: #000;
     }
 
     #fiction_chapter_title {
@@ -28,7 +38,7 @@
         line-height: 30px;
         padding: 10px 0;
         margin: 0 20px;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #000;
     }
 
     #fiction_containter>p {
@@ -55,8 +65,11 @@
         font-size: 16px;
         line-height: 24px;
         text-align: center;
-        border: 1px solid #ccc;
+        color:#fff;
+        background-color:#000;
+        border: 1px solid #000;
         border-radius: 5px;
+        opacity: 0.7;
     }
 
     #fiction_header {
@@ -89,17 +102,133 @@
          width: 100%;
         text-align: center;
     }
+
+    #fiction_footer{
+    	position: fixed;
+    	z-index: 999;
+    	bottom: 0;
+    	left:0;
+    	width: 100%;
+    	background-color:#000;
+    	opacity: 0.8;
+    	color:#fff;
+    	padding:10px 0;
+    }
+
+
+    #fiction_footer>ul {
+        width: 80%;
+        left: 10%;
+        position: relative;
+        text-align: center;
+    }
+
+    #fiction_footer ul li {
+        width: 32%;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    #fiction_footer_font_bg{
+    	position: fixed;
+    	z-index: 998;
+    	background-color:#000;
+    	opacity: 0.8;
+    	left:0;
+    	bottom:44px;
+    	width:100%;
+    	height: 152px;
+    }
+
+    #fiction_footer_font{
+    	position: fixed;
+    	z-index: 999;
+    	left:0;
+    	bottom: 44px;
+    	color:#fff;
+    	font-size:14px;
+    	width:100%;
+    	height:auto;
+    	padding:20px;
+    }
+
+     #fiction_footer_font>div{
+     	position: relative;
+     	margin-bottom: 20px;
+     }
+     .font_size_add{
+     	color:#fff;
+     	font-size:20px;
+     	line-height: 30px;
+     	display: inline-block;
+     	    padding: 0 15px;
+     	border:1px solid #fff;
+     	border-radius: 5px;
+     }
+
+      .font_size_minus{
+      	color:#fff;
+     	font-size:20px;
+     	line-height: 30px;
+     	display: inline-block;
+     	    padding: 0 15px;
+     	border:1px solid #fff;
+     	border-radius: 5px;
+     }
+
+     .font_bg_bg{
+     	display: inline-block;
+     	width:30px;
+     	height: 30px;
+     	border:2px solid #fff;
+     	border-radius: 50%;
+     	margin:0 2px;
+     	position: relative;
+     	top:10px;
+     }
+
+     .font_bg_bg1{
+     	background-color:#948f54;
+     }
+      .font_bg_bg2{
+     	background-color:yellow;
+     }
+      .font_bg_bg3{
+     	background-color:green;
+     }
+      .font_bg_bg4{
+     	background-color:grey;
+     }
+      .font_bg_bg5{
+     	background-color:#222;
+     }
+
+     #middle_area{
+     	position: fixed;
+     	z-index: 1000;
+     	width:100%;
+     	height: 200px;
+     	left:0;
+     	top:50%;
+     	margin-top:-100px;
+     }
     </style>
 </head>
 
 <body>
     <div class="mywrap">
-        <div id="fiction_header">
+        <!-- 顶部浮层 -->
+        <div id="fiction_header" style="display: none">
             <a href="javascript:void(0);" class="btn_goback"> &lt </a>
             <h3 class="fiction_header_title">掏空-李易峰</h3>
         </div>
+        <!-- 主要内容区域 -->
         <div id="root" class="container">
+            <!-- 文章标题 -->
             <div id="fiction_chapter_title">掏空</div>
+            <!-- 文章内容 -->
             <div id="fiction_containter" class="m-read-content">
                 <p>
                     星期一 她回避 我的眼睛 星期二 她捣乱了 我的呼吸 星期三 的天气 开始下雨 星期四的早晨 找不到爱过的痕迹 星期五的夜 不忍揭穿她的谎言 星期六的梦 好心痛
@@ -144,6 +273,7 @@
                     她掏空我的心 她操控我的情 却留下没有结局的一出戏 我爱得很小心 却还是伤了心 每一步我都无力去分辨那是爱还是陷阱 她掏空我的心 她操控我的情 她总是不留余地的作决定 让每一个星期天都变成我最遗憾的回忆
                 </p>
             </div>
+            <!-- 文章底部按钮区域 -->
             <div id="fiction_bottom_area" class="m-bottom-area">
                 <ul>
                     <li id="btn_prev">上一章</li>
@@ -151,7 +281,36 @@
                 </ul>
             </div>
         </div>
-        <div id="fiction_footer"></div>
+        <!-- 底部浮层区 -->
+        <div id="fiction_footer" style="display: none">
+            <ul>
+            	<li class="btn_footer_menu">目录</li>
+            	<li class="btn_footer_font">字体</li>
+            	<li class="btn_footer_moon">夜间</li>
+            </ul>
+        </div>
+        <!-- 二级浮层-字体浮层 -->
+         <div id="fiction_footer_font_bg" style="display: none"></div>
+         <div id="fiction_footer_font" style="display: none">
+           <div class="footer_font_size">
+                   <span>字号：</span>
+                   <a href="javascript:void(0)" class="font_size_add">+</a>
+                   <a href="javascript:void(0)" class="font_size_minus">-</a>
+           </div>
+           <div class="footer_font_bg">
+                   <span>背景：</span>
+                   <a href="javascript:void(0)" class="font_bg_bg font_bg_bg1"></a>
+                   <a href="javascript:void(0)" class="font_bg_bg font_bg_bg2"></a>
+                   <a href="javascript:void(0)" class="font_bg_bg font_bg_bg3"></a>
+                   <a href="javascript:void(0)" class="font_bg_bg font_bg_bg4"></a>
+                   <a href="javascript:void(0)" class="font_bg_bg font_bg_bg5"></a>
+
+           </div>
+         </div>
+
+         <!-- 中间点击区域 -->
+         <div id="middle_area"></div>
+
     </div>
     <script src="script/zepto.js"></script>
     <script>
@@ -160,6 +319,122 @@
     <script src="script/jquery.base64.js"></script>
     <script src="script/jquery.jsonp.js"></script>
     <script>
+        (function(){
+        	   var Util = (function(){
+        	   	      var prefix = 'html5_reader_'
+        	   	      var StorageGetter = function(key){
+        	   	      	   return localStorage.getItem(prefix+key);
+        	   	      }
+
+        	   	      var StorageSetter = function(key,val){
+        	   	      	   return localStorage.setItem(prefix+key,val);
+        	   	      }
+
+        	   	      return {
+        	   	      	  StorageGetter:StorageGetter,
+        	   	      	  StorageSetter:StorageSetter
+        	   	      }
+        	   })();
+
+        	   var Dom={
+                    top_nav:$("#fiction_header"),
+                    bottom_nav:$("#fiction_footer"),
+                    root:$("#root"),
+                    font_bg:$("#fiction_footer_font_bg"),
+                    font_float:$("#fiction_footer_font")
+        	   }
+               var Win = $(window);
+               var Doc = $(document);
+               var textp = $('#fiction_containter>p');
+               var initFontSize = Util.StorageGetter('font-size');
+               initFontSize = parseInt(initFontSize);
+               if(!initFontSize){
+                   initFontSize = 14;
+               }
+               textp.css('font-size',initFontSize);
+
+        	   function main(){
+        	   	  //入口方法
+        	   	  EventHandler();
+        	   }
+
+        	   function ReaderModel(){
+        	   	   //数据交互
+        	   }
+
+        	   function ReaderBaseFrame(){
+        	   	   //UI渲染
+        	   }
+
+        	   function EventHandler(){
+        	   	   //交互事件绑定
+        	   	   $("#middle_area").click(function(){
+        	   	   	    if(Dom.top_nav.css('display')=='none'){
+        	   	   	    	 Dom.top_nav.show();
+        	   	   	         Dom.bottom_nav.show();
+        	   	   	    }else{
+        	   	   	    	 Dom.top_nav.hide();
+        	   	   	         Dom.bottom_nav.hide();
+        	   	   	         Dom.font_float.hide();
+                         	 Dom.font_bg.hide();
+        	   	   	    }
+        	   	   });
+
+        	   	   Win.scroll(function(){
+
+        	   	   	         Dom.top_nav.hide();
+        	   	   	         Dom.bottom_nav.hide();
+        	   	   	         Dom.font_float.hide();
+                         	 Dom.font_bg.hide();
+        	   	   });
+
+        	   	    $(".mywrap").scroll(function(){
+
+        	   	   	         Dom.top_nav.hide();
+        	   	   	         Dom.bottom_nav.hide();
+        	   	   	         Dom.font_float.hide();
+                         	 Dom.font_bg.hide();
+        	   	   });
+
+        	   	   $(".btn_footer_font").click(function(){
+                         if(Dom.font_float.css("display")=='none'){
+                         	  Dom.font_float.show();
+                         	  Dom.font_bg.show();
+                         }else{
+                         	  Dom.font_float.hide();
+                         	  Dom.font_bg.hide();
+                         }
+        	   	   });
+
+        	   	   $(".btn_footer_moon").click(function(){
+
+        	   	   });
+
+        	   	   $(".font_bg_bg").click(function(){
+
+        	   	   });
+
+        	   	   $(".font_size_add").click(function(event){
+        	   	       if(initFontSize>20){
+                             return;
+        	   	   	    }
+        	   	   	    initFontSize++;
+                        $("#fiction_containter>p").css("font-size",initFontSize);
+                        Util.StorageSetter('font-size',initFontSize);
+        	   	   });
+
+        	   	   $(".font_size_minus").click(function(event){
+                        if(initFontSize<12){
+                             return;
+        	   	   	    }
+        	   	   	    initFontSize--;
+                        $("#fiction_containter>p").css("font-size",initFontSize);
+                        Util.StorageSetter('font-size',initFontSize);
+        	   	   });
+        	   }
+
+               main();
+        })();
     </script>
 </body>
 
